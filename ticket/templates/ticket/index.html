@@ -1,3 +1,5 @@
+{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +9,13 @@
   <title>Ticket</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="{% static 'css/ticket.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'test.css' %}"> -->
 </head>
 <body class="container">
   <h1>Wellcome to ticketing site</h1>
   {% for ticket in tickets %}
-    <div class="post-container">
+    <div class="ticket-container">
       <h2 class="text-primary">{{ ticket.title }}</h2>
       <p class="post-container__body">{{ ticket.description }}</p>
       <p class="post-container__status">{{ ticket.status }}</p>
