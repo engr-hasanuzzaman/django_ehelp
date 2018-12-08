@@ -9,4 +9,4 @@ def ticket_list(request):
 
 def show(request, pk):
   ticket = Ticket.objects.get(pk=pk)
-  return render(request, 'ticket/show', {'ticket': ticket})
+  return render(request, 'ticket/show.html', {'ticket': ticket})
