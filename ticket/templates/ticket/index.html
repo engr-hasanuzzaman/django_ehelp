@@ -3,7 +3,7 @@
   <h1>Wellcome to ticketing site</h1>
   {% for ticket in tickets %}
     <div class="ticket-container">
-      <h2 class="text-primary">{{ ticket.title }}</h2>
+      <a href="{% url 'show_ticket' pk=ticket.pk %}">{{ ticket.title }}</a>
       <p class="text-success">{{ ticket.description }}</p>
       <p class="post-container__status">{{ ticket.status }}</p>
       <p class="post-container__status">{{ ticket.creator.email }}</p>

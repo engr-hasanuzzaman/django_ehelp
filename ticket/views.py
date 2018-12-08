@@ -6,3 +6,7 @@ from .models import Ticket
 def ticket_list(request):
   tickets = Ticket.objects.all()
   return render(request, 'ticket/index.html', {'tickets': tickets})
+
+def show(request, pk):
+  ticket = Ticket.objects.get(pk=pk)
+  return render(request, 'ticket/show', {'ticket': ticket})
