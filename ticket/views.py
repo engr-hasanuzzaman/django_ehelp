@@ -13,5 +13,10 @@ def show(request, pk):
   return render(request, 'ticket/show.html', {'ticket': ticket})
 
 def new(request):
-  form = TicketForm()
-  return render(request, 'ticket/new.html', {'form': form})
+  if request.method == 'POST':
+    form = TicketForm(request.POST)
+    if form.is_valid():
+      ticket = form.save(commit=False)
+  else:
+    form = TicketForm()
+    return render(request, 'ticket/new.html', {'form': form})
