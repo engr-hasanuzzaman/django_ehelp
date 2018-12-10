@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1767ff56603af37f38d4503822d7434750df26509c7503a1e55850312bd3e760"
+            "sha256": "f5d32c1670771f41eba873edb18de4ba937e838315655b10b668902e06e5a663"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -24,6 +24,22 @@
             "index": "pypi",
             "version": "==2.1.4"
         },
+        "django-filter": {
+            "hashes": [
+                "sha256:6f4e4bc1a11151178520567b50320e5c32f8edb552139d93ea3e30613b886f56",
+                "sha256:86c3925020c27d072cdae7b828aaa5d165c2032a629abbe3c3a1be1edae61c58"
+            ],
+            "index": "pypi",
+            "version": "==2.0.0"
+        },
+        "djangorestframework": {
+            "hashes": [
+                "sha256:607865b0bb1598b153793892101d881466bd5a991de12bd6229abb18b1c86136",
+                "sha256:63f76cbe1e7d12b94c357d7e54401103b2e52aef0f7c1650d6c820ad708776e5"
+            ],
+            "index": "pypi",
+            "version": "==3.9.0"
+        },
         "get": {
             "hashes": [
                 "sha256:27db4f4331b3da349f16e04a7f5a763b46bc0d3ab8ff79b9dcca6dbdd18f4f1f",
@@ -31,12 +47,20 @@
             ],
             "version": "==2018.11.19"
         },
+        "markdown": {
+            "hashes": [
+                "sha256:c00429bd503a47ec88d5e30a751e147dcb4c6889663cd3e2ba0afe858e009baa",
+                "sha256:d02e0f9b04c500cde6637c11ad7c72671f359b87b9fe924b2383649d8841db7c"
+            ],
+            "index": "pypi",
+            "version": "==3.0.1"
+        },
         "post": {
             "hashes": [
                 "sha256:00d9e0b373fc56948106e7339230b064c0c7586b2ad589991209f2e87d06b3ab",
                 "sha256:4b893a69e5bda4ca3d6fa9c9fd1fd4440b98d32e22aa3c4d44fb3d1d5ddc55c2"
             ],
-            "markers": "python_version != '3.2.*' and python_version != '3.0.*' and python_version != '3.1.*' and python_version != '3.3.*' and python_version >= '2.7'",
+            "markers": "python_version != '3.3.*' and python_version != '3.1.*' and python_version != '3.2.*' and python_version >= '2.7' and python_version != '3.0.*'",
             "version": "==2018.11.20"
         },
         "public": {
@@ -44,7 +68,7 @@
                 "sha256:4f104163de000e4d430c03a91ac8918a8d615e2452007ee7108dcc4e5caa2f6c",
                 "sha256:b2250d4aca6719b66090402400de22777a37b0d2e9ac3ff74dc3f348725090fa"
             ],
-            "markers": "python_version != '3.2.*' and python_version != '3.0.*' and python_version != '3.1.*' and python_version != '3.3.*' and python_version >= '2.7'",
+            "markers": "python_version != '3.3.*' and python_version != '3.1.*' and python_version != '3.2.*' and python_version >= '2.7' and python_version != '3.0.*'",
             "version": "==2018.11.20"
         },
         "pytz": {
