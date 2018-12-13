@@ -6,5 +6,7 @@ from django.contrib.auth import login, authenticate
 def sign_up(request):
   if request.method == 'POST':
     # user registration
+    return None
   else:
-    return render(request, )
+    form = UserCreationForm()
+    return render(request, 'user/new.html', {'form': form})
