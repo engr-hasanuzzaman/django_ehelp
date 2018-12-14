@@ -1,35 +1,24 @@
+{% extends 'layout/application.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>user</title>
-  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/ticket.css' %}">
-  <!-- <link rel="stylesheet" href="{% static 'test.css' %}"> -->
-</head>
-<body>
-  <div class="header">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="{% url 'ticket_index' %}">All Ticket</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'new_ticket' %}">New Ticket</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Signin</a>
-      </li>
-    </ul>
-  </div>
-  <div class="content container">
-    {% block content %} 
-    {% endblock %}
-  </div>
-</body>
-</html>
+
+{% block assets %}
+  <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+
+{% block content %}
+  <form action="" method="post" class="registration-form">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-group">
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit">submit</button>
+  </form>
+{% endblock %}  

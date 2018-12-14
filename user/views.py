@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.conf.urls import handler403
-from .forms import UserLogin
+from .forms import UserLoginForm
 
 # Create your views here.
 def sign_up(request):
+  print('---with in sing_up method')
   if request.method == 'POST':
     form = UserCreationForm(request.POST)
     if form.is_valid():
@@ -20,15 +21,27 @@ def sign_up(request):
   return render(request, 'user/new.html', {'form': form})
 
 def sign_in(request):
+  print('---with in sign_in method')
   if request.method == 'POST':
-    form = UserLogin(request.POST)
+    form = UserLoginForm(request.POST)
+    print(form.is_valid())
     if form.is_valid():
-      u_name = authenticate(username=form.cleaned_data.get('username'))
-      u_pass = authenticate(username=form.cleaned_data.get('password'))
-      user = authenticate(username = u_name, password = u_pass)
-      login(request, user)
+      username = form.cleaned_data.get('username')
+      raw_password = form.cleaned_data.get('password')
+      user = authenticate(username = username, password = raw_password)
+      print("user is %s"%(user))
+      if user:
+          login(request, user)
       return redirect('home')
+      
   else:    
-    form = UserLogin()
-    
+    form = UserLoginForm()
+
   return render(request, 'user/signin.html', {'form': form})
+
+def signout(request):
+  if request.user.is_authenticated:
+    logout(request)
+    return redirect('home')
+  else:  
+    return redirect('home')
