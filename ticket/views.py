@@ -6,7 +6,7 @@ from .forms import TicketForm
 
 # Create your views here.
 def ticket_list(request):
-  tickets = Ticket.objects.all().order_by('-created_at')
+  tickets = Ticket.objects.filter(creator=request.user)
   return render(request, 'ticket/index.html', {'tickets': tickets})
 
 def show(request, pk):

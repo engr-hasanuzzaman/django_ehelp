@@ -21,7 +21,7 @@ from rest_framework import routers, serializers, viewsets
 
 urlpatterns = [
     path('super/', admin.site.urls),
-    path('', include('ticket.urls')),
+    re_path('^ticket', include('ticket.urls')),
     re_path(r'accounts/', include('user.urls')),
-    path('foo/', views.hello)
+    path('', views.home)
 ]
