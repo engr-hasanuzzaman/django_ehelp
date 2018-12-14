@@ -8,6 +8,8 @@
   <title>user</title>
   <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/ticket.css' %}">
+  {% block assets %}
+  {% endblock %}
   <!-- <link rel="stylesheet" href="{% static 'test.css' %}"> -->
 </head>
 <body>
@@ -20,7 +22,7 @@
         <a class="nav-link" href="{% url 'new_ticket' %}">New Ticket</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
+        <a class="nav-link" href="{% url 'new_user' %}">Sign Up</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Signin</a>

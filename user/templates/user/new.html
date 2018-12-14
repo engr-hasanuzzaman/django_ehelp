@@ -1,9 +1,24 @@
 {% extends 'layout/application.html' %}
+{% load static %}
+
+{% block assets %}
+  <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
 
 {% block content %}
-  <form action="" method="post">
+  <form action="" method="post" class="registration-form">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% for field in form %}
+      <div class="form-group">
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
     <button type="submit">submit</button>
   </form>
 {% endblock %}  
