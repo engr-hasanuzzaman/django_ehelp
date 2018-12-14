@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
-from django.urls import path, include
+from django.urls import path, include, re_path
 from . import views
 from rest_framework import routers, serializers, viewsets
 
 urlpatterns = [
     path('super/', admin.site.urls),
-    path('asdfa', include('ticket.urls')),
-    path('', include('user.urls')),
+    path('', include('ticket.urls')),
+    re_path(r'accounts/', include('user.urls')),
     path('foo/', views.hello)
 ]
