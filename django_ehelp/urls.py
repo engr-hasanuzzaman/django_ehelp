@@ -21,7 +21,7 @@ from rest_framework import routers, serializers, viewsets
 
 urlpatterns = [
     path('super/', admin.site.urls),
-    path('', include('ticket.urls')),
-    path('sign_up/', include('user.urls')),
+    path('asdfa', include('ticket.urls')),
+    path('', include('user.urls')),
     path('foo/', views.hello)
 ]
