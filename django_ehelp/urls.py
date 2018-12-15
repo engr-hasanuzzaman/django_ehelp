@@ -23,5 +23,6 @@ urlpatterns = [
     path('super/', admin.site.urls),
     re_path('^ticket', include('ticket.urls')),
     re_path(r'accounts/', include('user.urls')),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    re_path(r'^api/', include('rest_framework.urls'))
 ]
