@@ -32,7 +32,7 @@ def sign_in(request):
       print("user is %s"%(user))
       if user:
           login(request, user)
-      return redirect('home')
+      return redirect('ticket_index')
       
   else:    
     form = UserLoginForm()
