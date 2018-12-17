@@ -43,6 +43,6 @@ urlpatterns = [
     re_path('^ticket', include('ticket.urls')),
     re_path(r'accounts/', include('user.urls')),
     path('', views.home, name='home'),
-    re_path(r'^api/v[1 2 3]/', include(router.urls)),
+    re_path(r'^api/v1/', include('ticket.api.urls')),
     re_path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
