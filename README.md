@@ -1,4 +1,7 @@
-# install python 3.7
-# install `pipenv` that we are using for manageing dependecies
-# clone this repo using `git clone repo_pah` command
-
+- install python 3.7
+- install `pipenv` that we are using for manageing dependecies
+- clone this repo using `git clone repo_pah` command
+- start virtual env using `pipenv shell`
+- install dependency using `pipenv install`
+- run migration using `python manage.py migrate`
+- run server using `python manage.py runserver`
