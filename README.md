@@ -5,3 +5,4 @@
 - install dependency using `pipenv install`
 - run migration using `python manage.py migrate`
 - run server using `python manage.py runserver`
+- use command `python manage.py shell` for console access
