@@ -17,3 +17,10 @@ class Ticket(models.Model):
   def __str__(self):
     return self.title
   
+  
+# declare enum for ticket type 
+from enum import Enum
+class Status(Enum):   # A subclass of Enum
+    opn = "Open"
+    cls = "Close"
+    re = "Reviewd"
