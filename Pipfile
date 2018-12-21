@@ -12,6 +12,7 @@ djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
 django-extensions = "*"
+django-model-utils = "==1.1.0"
 
 [requires]
 python_version = "3.7"
