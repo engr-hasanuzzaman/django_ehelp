@@ -58,9 +58,6 @@ def signout(request):
   else:  
     return redirect('home')
 
-
-
-
 @csrf_exempt
 @api_view(["POST"])
 @permission_classes((AllowAny,))
